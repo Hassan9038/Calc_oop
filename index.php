@@ -1,44 +1,59 @@
-<?php
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+     .container{
+         width: 600px;
+         margin: 100px auto;
+         background-color: #DDD;
+         padding: 10px 10px 20px 
+     }
+     h3{
+         font-weight: bold;
+         font-size: 30px;
+         margin: 20px 0;
+         text-align: center
+     }
+     input{
+         width: 40%;
+         padding: 10px
+     }
+     select{
+         width: 10%;
+         padding: 10px
+     }
+     button{
+       width: 70px;
+       display: block;
+       margin: 40px auto;
+       font-weight: bold;
+       font-size: 20px;
+       background-color:#00bcd4; 
+       color: #FFF;
+       cursor: pointer;
+       border: none
+       
 
-class calc{
+     }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <h3>Calculator</h3>
+        <form action="calc.php" method="post">
+          <input type="numteber" name="num1" placeholder="Type a Number">
 
-    // Method 
+          <select name="operator" id="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+          </select>
 
-    public function add($n1 , $n2){
-        echo ($n1 + $n2) ;
-    }
-
-    public function sub($n1 , $n2){
-        echo ($n1 - $n2) ;
-    }
-
-    public function mul($n1 , $n2){
-        echo ($n1 * $n2) ;
-    }
-
-    public function div($n1 , $n2){
-        echo ($n1 / $n2) ;
-    }
-}
-
-// object 
-
-$calcutor = new calc();
-
- $num1 = $_POST['num1'];
- $num2 = $_POST['num2'];
- $oper = $_POST['operator'];
-
-if($oper === '+'){
-     $calcutor->add($num1 , $num2);
- }elseif($oper  === '-'){
-     $calcutor->sub($num1 , $num2);
- }elseif($oper  === '/'){
-     $calcutor->div($num1 , $num2);
- }elseif($oper  === '*'){
-     $calcutor->mul($num1 , $num2);
- }else{
-     echo 'No';
- }
-
- echo "<br><a href='homeworkone.php'>Back</a>";
+          <input type="number" name="num2" placeholder="Type a Number">
+          <button type="submit">=</button>
+        </form>
+      </div>
+  </body>
+</html>
